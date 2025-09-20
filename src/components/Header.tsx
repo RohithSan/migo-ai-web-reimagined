@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -6,11 +7,11 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    { name: "About Us", href: "#about" },
-    { name: "Quality Services", href: "#quality" },
-    { name: "Clinical Services", href: "#clinical" },
-    { name: "IT & CSV Services", href: "#it-csv" },
-    { name: "Careers", href: "#careers" },
+    { name: "About Us", href: "/about-us" },
+    { name: "Quality Services", href: "/quality-services" },
+    { name: "Clinical Services", href: "/clinical-services" },
+    { name: "IT & CSV Services", href: "/it-csv-services" },
+    { name: "Careers", href: "/careers" },
   ];
 
   return (
@@ -18,21 +19,21 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <Link to="/" className="flex-shrink-0">
             <h1 className="text-2xl font-bold text-gradient">MIGO AI</h1>
             <p className="text-xs text-muted-foreground">Driving Compliance. Empowering Innovation.</p>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.href}
                 className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -58,14 +59,14 @@ const Header = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-border">
               {navigation.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="block px-3 py-2 text-foreground hover:text-primary transition-colors duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
               <div className="pt-4">
                 <Button variant="cta" className="w-full">

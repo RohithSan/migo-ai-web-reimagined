@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
@@ -29,24 +30,19 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#quality" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-300">
+                <Link to="/quality-services" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-300">
                   Quality
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#clinical" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-300">
+                <Link to="/clinical-services" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-300">
                   Clinical
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#it-csv" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-300">
+                <Link to="/it-csv-services" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-300">
                   IT & CSV
-                </a>
-              </li>
-              <li>
-                <a href="#simplyqms" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-300">
-                  SimplyQMS
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
